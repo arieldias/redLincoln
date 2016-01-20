@@ -1,0 +1,36 @@
+O objetivo do sistema é criar um mecanismo de controle do consumo nutricional de um usuário. 
+
+O SISTEMA PRECISA: 
+  estar apto a receber atualizações e melhorias.
+
+
+  ter um sistema de login
+
+  permitir que haja interação entre usuarios (nutricionista - paciente, paciente - nutricionista) mas também que possa ser usado apenas pelo usuario como controle de referencia pessoal.
+
+Tela inicial: login
+
+TELAS USUARIO:
+   Consulta de calorias (tela de relatórios)
+   Adicionar nova refeição
+   
+
+TELAS NUTRI:
+   Pra mais além
+
+TELAS ADMIN:
+  Pra mais além
+
+
+
+-------------------------------
+
+Auto completar
+
+
+   
+  
+
+
+
+
