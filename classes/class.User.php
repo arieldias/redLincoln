@@ -5,18 +5,24 @@ class User extends Base {
   private $email;
 
   public function __construct(){
-	parent::__construct(get_class());
+	  parent::__construct(get_class());
   }
 
-  public function setBasicItems(){
-  	$r = $this->query("*", "WHERE id = 1");
-
-    while($obj = $r->fetch_object()){ 
-      $this->id = $obj->id; 
-      $this->name = $obj->name;        
-      $this->email = $obj->email;
-	}
+  public function login($user, $password) {
+    if ($user == 'arieldias' &&  $password=='rollTheBones') {
+      $_SESSION['login'] = 'Ariel';
+      echo "Logado com sucesso";
+    }
+    else {
+      echo "Login Invalido";
+    }
   }
+
+  public function logout() {
+    session_destroy();
+  }
+
+
 }
 	
 ?>
