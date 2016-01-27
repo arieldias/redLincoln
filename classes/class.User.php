@@ -30,13 +30,26 @@ class User extends Base {
     }    
   }
 
-  public function checkLogin(){
-    if($_SESSION && $_SESSION['user'] ) {
-      echo "estamos logados";
-    }else{
-      echo "não estamos logados";
+  public function getMenu() {
+    if( $this->checkLogin() ) {
+      echo 
+      "<ul>
+        <li> <a href=\"javascript:void()\"/> My Meals </li>
+        <li> <a href=\"javascript:void()\"/> My Prescription </li>
+        <li> <a href=\"javascript:void()\"/> Logout </li>
+      </ul>";
+    } else {
+      echo "<script>callModal(\"login\")</script>";
     }
   }
+
+  public function checkLogin(){
+    if($_SESSION && $_SESSION['user'] ) 
+      return true;
+    
+    return false;
+  }
+
   public function logout() {
     unset($_SESSION['user']);
   }
