@@ -4,34 +4,50 @@ class Base {
   private $tableName;
   private $fieldNames;
 
-  global $db;
+  
 
 	public function __construct($className) {
     $this->className = $className;
-    $this->tableName = "_".strtolower($className);
-    
-    //iniciar busca das dos campos dessa tabela
+    $this->tableName = "_".strtolower($className);    
   }
 
 
 
   public function query($column = "*", $refinement="") {
     $sql = "SELECT ". $column . " FROM " . $this->tableName." ".$refinement;
-  
-    $result = $db->query($sql);
     echo $sql;
+    global $db;
 
-        
+    $result = $db->query($sql);
+    $arr = array();
+
     while($obj = $result->fetch_object()){ 
-      $line [ $obj->id ] [$result->fetch_object()]  = $obj->id; 
-      $line [ $obj->id ] ['fieldName2'] = $obj->name;        
+      foreach($obj as $t => $v) {
+         $arr[$obj->id][$t] = $v;
+      }
 	  }
 
-    
-    print_r($line);
-    
+    if ($arr)
+      return $arr;
+  }
 
-	  // return $line;
+  function error($newError) {
+    if (!$isThereErrors) {
+      $errors = array();
+    }
+    $errors[] = $newError;
+  }
+
+  function clearError() {
+    if($isThereErrors)
+      unset($errors);
+  }
+
+  function isThereErrors() {
+    if ($errors)
+      return true;
+
+    return false;
   }
 }
 ?>

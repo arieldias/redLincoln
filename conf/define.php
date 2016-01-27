@@ -5,5 +5,6 @@
 	define("DB_PASSWORD","");
 	define("DB_SERVER","localhost");
 	define("DB_BASE","redLincoln");
-	define("PATHCLASSES", ROOTPATH."classes/")
+	define("PATHCLASSES", ROOTPATH."classes/");
+	define("VIEWURL", ROOTURL."view/");
 ?>
