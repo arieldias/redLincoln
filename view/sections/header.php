@@ -6,7 +6,8 @@
 <html>
   <head>
 	<title> Nutrition Record </title>
-	<script src="<?php echo ROOTURL?>assets/stylesheet/javascript/login.js" type="javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+	<script src="<?php echo ROOTURL?>assets/javascript/login.js"></script>
   </head>
   <body>
     <header>
