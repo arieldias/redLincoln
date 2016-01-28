@@ -32,6 +32,7 @@ class User extends Base {
 
   public function getMenu() {
     if( $this->checkLogin() ) {
+      echo 'here I am';
       echo 
       "<ul>
         <li> <a href=\"javascript:void()\"/> My Meals </li>
@@ -39,12 +40,13 @@ class User extends Base {
         <li> <a href=\"javascript:void()\"/> Logout </li>
       </ul>";
     } else {
-      echo "<script>callModal(\"login\")</script>";
+      echo 'till you see the light';
+      echo "<script> $('document').ready(function(){ callModalLogin() }) </script>";
     }
   }
 
   public function checkLogin(){
-    if($_SESSION && $_SESSION['user'] ) 
+    if(isset($_SESSION['user']) && is_array($_SESSION["user"]) ) 
       return true;
     
     return false;

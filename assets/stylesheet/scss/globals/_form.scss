@@ -1,0 +1,25 @@
+.form-classic {
+	.row {
+		display: block;
+		padding-bottom: 10px;
+		margin-bottom: 10px;
+		border-bottom: 1px dashed #E5E5E5;
+		&:last-child {
+			border-bottom: none;
+			margin-bottom: 0px;
+			padding-bottom: 0px;
+		}
+	}
+	label {
+		color: #5A5A5A;
+		display: block;
+		padding: 3px 0px;
+		font-size: 14px;
+	}
+
+	input {
+		padding: 3px;
+		width: 320px;
+	}
+
+}
