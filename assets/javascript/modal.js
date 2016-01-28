@@ -25,6 +25,18 @@ function submitModal(which){
   var func;
   switch(which) {
     case  'login': 
-      checkErrors();
+      if( checkEmptyErrors() ){
+
+      } else {
+        
+      }
+
   }
+}
+
+function checkEmptyErrors() {
+  var error = true;
+  $("input.requisite").each(function(){
+     error = $(this).val() == '' ? false : !error ? false : true;
+  })
 }
