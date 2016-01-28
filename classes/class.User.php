@@ -41,7 +41,7 @@ class User extends Base {
       </ul>";
     } else {
       echo 'till you see the light';
-      echo "<script> $('document').ready(function(){ callModalLogin() }) </script>";
+      // echo "<script> $('document').ready(function(){ moduleLogin.callLogin() }) </script>";
     }
   }
 

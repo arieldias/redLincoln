@@ -1,4 +1,3 @@
-
-function callModal(what) {
-  
+module.exports = {
+	
 }
