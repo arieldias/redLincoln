@@ -10,7 +10,7 @@ define("login", function (require) {
         html  +=    "<input type='password' name='password' id='login_password'/>";
         html  +=  "</div>";
         html  +=  "<div class='row'>";
-        html  +=    "<input type='submit' value='Log in' onclick='return false; submitModal(\"login\")' class='bt-white-blue' name='ok'/>";
+        html  +=    "<a href='javascript:void(0)' onclick='submit()' value='Log in' class='bt-white-blue' id='submit-login'name='ok'/>";
         html  +=  "</div>";
         html  +="</form>";
  
@@ -22,9 +22,14 @@ define("login", function (require) {
     console.log("This night I slept and " + withP)
   }
 
+  submit = function () {  	
+  		console.log("Submeter!!!"); 	
+  }
+
   return {
     callLogin : callLogin,
     completeTheFrase : completeTheFrase
+    
   } 
   
 });

@@ -1,4 +1,4 @@
-var x = requirejs.config({
+ var gb = requirejs.config({
     //By default load any module IDs from js/lib
     baseUrl: 'assets/javascript/',
     //except, if the module ID starts with "app",
@@ -15,5 +15,4 @@ var x = requirejs.config({
 
 require(['login', 'modal'], function(login, modal) {
    login.callLogin();
-   login.completeTheFrase(modal.iHadAdream());
 });
