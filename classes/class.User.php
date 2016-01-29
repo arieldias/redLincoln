@@ -10,24 +10,35 @@ class User extends Base {
   }
 
   public function login($user, $password) {
-    $query = $this->query("*", "WHERE email = '".$user . "'");
-    
-    foreach ($query as $idSearch => $array ){
-      foreach($array as $field => $value) {
-        if($field == 'password' and $value == md5($password)) {
-          $user = array('id' => $array['id'], 'name' => $array['name']);
-          $_SESSION['user'] = $user;            
-        }
-      }
-    }
-
+    $query = $this->query("*", "WHERE email = '".$user . "'");  
     if (!$query) {
       $this->error("The user doesn't exist");
     } else {
-      if(!$_SESSION['user']) {
-        $this->error("password is not valid");
+      foreach ($query as $idSearch => $array ){
+        foreach($array as $field => $value) {
+          if($field == 'password' and $value == md5($password)) {
+            
+            $user = array(
+              'id' => $array['id'], 
+              'name' => $array['name']
+            );
+
+            $_SESSION['user'] = $user;            
+            return true;
+          }
+        }
       }
-    }    
+      if (!isset($_SESSION['user'])) {
+        $this->error("password is not valid");  
+      }
+    }
+    
+
+   
+
+    if ( $this-> isThereErrors() )  {
+      return $this->returnErrors();
+    }
   }
 
   public function getMenu() {

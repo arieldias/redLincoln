@@ -14,5 +14,5 @@
 
 
 require(['login', 'modal'], function(login, modal) {
-   login.callLogin();
+   // login.callLogin();
 });

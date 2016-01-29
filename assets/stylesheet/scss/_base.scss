@@ -4,7 +4,6 @@
 
 .bt-white-blue {
 	color: $blueSky;
-	display: block;
 	padding: 10px 20px;
 	font-size: 14px;
 	background: #FFF;
@@ -14,6 +13,7 @@
 	border-radius: 5px;
 	font-weight: bold;
 	cursor: pointer;
+  display: inline-block;
 }
 .dialog-popup {
   position: absolute;
@@ -44,7 +44,7 @@
     margin-left:  -25%;
     border-top-width: 3px;
     border-top-color: $blueSky;
-	border-bottom-width: 5px;
-	border-bottom-color: $greenSoft;
+	   border-bottom-width: 5px;
+	  border-bottom-color: $greenSoft;
   }
 }

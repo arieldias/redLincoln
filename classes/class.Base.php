@@ -3,6 +3,7 @@ class Base {
   private $className;
   private $tableName;
   private $fieldNames;
+  private $errors = array();
 
   
 
@@ -14,40 +15,45 @@ class Base {
 
 
   public function query($column = "*", $refinement="") {
+
     $sql = "SELECT ". $column . " FROM " . $this->tableName." ".$refinement;
-    echo $sql;
     global $db;
 
     $result = $db->query($sql);
     $arr = array();
+
 
     while($obj = $result->fetch_object()){ 
       foreach($obj as $t => $v) {
          $arr[$obj->id][$t] = $v;
       }
 	  }
-
+    
     if ($arr)
       return $arr;
+
+    return false;
+    
   }
 
-  function error($newError) {
-    if (!$isThereErrors) {
-      $errors = array();
-    }
-    $errors[] = $newError;
+  public function error($newError) {
+    $this->errors[] = $newError;
   }
 
-  function clearError() {
+  public function clearError() {
     if($isThereErrors)
-      unset($errors);
+      unset($this->errors);
   }
 
-  function isThereErrors() {
-    if ($errors)
+  public function isThereErrors() {
+    if ($this->errors[0])
       return true;
 
     return false;
+  }
+
+  public function returnErrors() {
+    return $this->errors;
   }
 }
 ?>
