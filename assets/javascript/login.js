@@ -13,6 +13,7 @@ define("login", function (require) {
         html  +=  "</div>";
         html  +=  "<div class='row'>";
         html  +=    "<input type='button' name='submit_login' href='javascript:void(0)' value='Log in' class='bt-white-blue' id='submit-login'/>";
+        html  +=     "<div class='errors'></div>"
         html  +=  "</div>";
         html  +="</form>";
  
@@ -37,9 +38,12 @@ define("login", function (require) {
            url: "controller/login.php",
            success: function(data){
               if ($.isArray(data)) {
-                console.log(data)
-              }else{
-                console.log(data)
+                $(".errors").html("");
+                $(data).each(function(i,m){
+                  $(".errors").append("<span class='error'>" + m + "</span>")
+                })
+
+              } else {
                 window.modules.modal.clearModal();
                 callLoginSuccess();
                 setTimeout(function(){
@@ -62,7 +66,6 @@ define("login", function (require) {
     });
 
     return array;
-
   }
 
   return {

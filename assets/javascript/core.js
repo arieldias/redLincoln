@@ -19,9 +19,7 @@ require(['login', 'modal'], function(login, modal) {
    window.modules.modal = modal; 
    for(var i = 0; i < loadCallbacks.length; i++) {
     loadCallbacks[i]();
-   }
-
-   
+   }   
 });
 
 

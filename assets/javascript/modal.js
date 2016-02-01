@@ -2,7 +2,7 @@ define("modal", function (require) {
   openModal = function(module, func){
   	clearModal()
   	window.modules[module][func]();
-  	$(".dialog-popup").css('display', "block");
+  	$(".dialog-popup").fadeIn();
   } 
 
   clearModal = function(){

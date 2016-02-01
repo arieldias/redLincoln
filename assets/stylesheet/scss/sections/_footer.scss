@@ -1,0 +1,10 @@
+footer {
+  display: block;
+  z-index: 1;
+  padding: $spacing;
+  background: $greenSoft;
+  border-top: 2px solid $grey;
+  position: absolute;
+  bottom: 0px;
+  width: calc(100% - 20px);  
+}
