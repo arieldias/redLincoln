@@ -37,8 +37,9 @@ define("login", function (require) {
            url: "controller/login.php",
            success: function(data){
               if ($.isArray(data)) {
-                
+                console.log(data)
               }else{
+                console.log(data)
                 window.modules.modal.clearModal();
                 callLoginSuccess();
                 setTimeout(function(){

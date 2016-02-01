@@ -61,10 +61,8 @@ class User extends Base {
   }
 
   public function checkLogin(){
-    if(isset($_SESSION['user']) && is_array($_SESSION["user"]) ) 
-      return true;
-    
-    return false;
+    return isset($_SESSION['user']) ? true : false;
+       true;
   }
 
   public function logout() {
