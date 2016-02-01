@@ -48,7 +48,11 @@ class User extends Base {
       "<ul class='main_menu'>
         <li> <a href=''>Minhas refeições</a></li>
         <li> <a href=''>Meus relatórios</a></li>
-        <li> <a href=''>Usuário</a></li>      
+        <li>  <a href='javascript:void(0)'>Usuário</a>  
+          <ul class='submenu'>
+            <a href='javascript:void(0)'  onclick='window.modules.login.logout()'>Logout</a>
+          </ul>
+        </li>      
       </ul>";
     } else {
       echo  
@@ -67,6 +71,7 @@ class User extends Base {
 
   public function logout() {
     unset($_SESSION['user']);
+    return true;
   }
 
 

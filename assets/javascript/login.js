@@ -48,15 +48,28 @@ define("login", function (require) {
                 callLoginSuccess();
                 setTimeout(function(){
                   window.modules.modal.closeModal();  
+                  window.location.reload()
                 },3000)
                 
                 
               }
            }
-        });
-
-       
+        });       
     })    
+  }
+
+  logout = function() {
+      $.ajax({
+       type: "POST",
+       data: {
+         logout:"logout"
+       },
+       url: "controller/login.php",
+       success: function(data){
+          if(data);
+          window.location.reload()
+       }
+    });
   }
 
   getFields = function(from){
@@ -68,8 +81,11 @@ define("login", function (require) {
     return array;
   }
 
+
+
   return {
-    callLogin : callLogin    
+    callLogin : callLogin,
+    logout : logout    
   } 
   
 });
