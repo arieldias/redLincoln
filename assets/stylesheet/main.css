@@ -68,12 +68,8 @@ i {
   padding: 3px;
   width: calc(100% - 10px); }
 
-* {
-  font-family: verdana, arial, helvetica, sans-serif; }
-
 .bt-white-blue {
   color: #25b7d3;
-  display: block;
   padding: 10px 20px;
   font-size: 14px;
   background: #FFF;
@@ -82,7 +78,8 @@ i {
   border-left: 0px;
   border-radius: 5px;
   font-weight: bold;
-  cursor: pointer; }
+  cursor: pointer;
+  display: inline-block; }
 
 .dialog-popup {
   position: absolute;
@@ -114,5 +111,24 @@ i {
     border-top-color: #25b7d3;
     border-bottom-width: 5px;
     border-bottom-color: #25B681; }
+
+* {
+  font-family: verdana, arial, helvetica, sans-serif; }
+
+html {
+  background: #f8fcfd; }
+
+header {
+  background: #25b7d3;
+  border-bottom: 3px solid #e2e4e5; }
+  header > a, header > ul {
+    display: inline-block; }
+  header > a {
+    width: 45%;
+    padding-right: 5%; }
+  header > ul {
+    width: 50%; }
+    header > ul li {
+      display: inline-block; }
 
 /*# sourceMappingURL=main.css.map */

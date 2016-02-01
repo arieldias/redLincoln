@@ -1,5 +1,7 @@
 <?php
 include "../conf/topo_basic.php";
+
+  // Submit login
   if (isset($_POST['submit_login']) ) {
   	header('Content-Type: application/json');
   	$usr = new User();

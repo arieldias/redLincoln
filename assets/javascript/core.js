@@ -1,18 +1,27 @@
- var gb = requirejs.config({
-    //By default load any module IDs from js/lib
+window.modules = {};
+ var loadCallbacks = [];
+ var myPaths = {
+     login: 'login',
+      modal : 'modal'
+ }
+ function onModuleLoad(callback) {
+   loadCallbacks.push(callback);
+ }
+
+ requirejs.config({
     baseUrl: 'assets/javascript/',
-    //except, if the module ID starts with "app",
-    //load it from the js/app directory. paths
-    //config is relative to the baseUrl, and
-    //never includes a ".js" extension since
-    //the paths config could be for a directory.
-    paths: {
-        login: 'login',
-        modal : 'modal'
-    }
+    paths: myPaths
 });
 
 
 require(['login', 'modal'], function(login, modal) {
-   // login.callLogin();
+   window.modules.login = login;
+   window.modules.modal = modal; 
+   for(var i = 0; i < loadCallbacks.length; i++) {
+    loadCallbacks[i]();
+   }
+
+   
 });
+
+

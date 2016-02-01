@@ -1,10 +1,22 @@
 define("modal", function (require) {
-  iHadAdream = function(){
-    return "I had a dream"
+  openModal = function(module, func){
+  	clearModal()
+  	window.modules[module][func]();
+  	$(".dialog-popup").css('display', "block");
   } 
 
+  clearModal = function(){
+  	$(".popup-content").html("");
+  }
+
+  closeModal = function(){
+  	$(".dialog-popup").fadeOut();
+  }
+
   return {
-    iHadAdream : iHadAdream
+    openModal : openModal,
+    clearModal: clearModal,
+    closeModal : closeModal
   } 
 });
  

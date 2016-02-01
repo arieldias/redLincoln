@@ -1,0 +1,20 @@
+header {
+  background: $blueSky;
+  border-bottom: 3px solid $grey;
+
+  > a, > ul {
+    display: inline-block;
+  }
+
+  > a {
+    width: 45%;
+    padding-right: 5%;
+  }
+
+  > ul {
+    width: 50%;
+    li {
+      display:  inline-block;
+    }
+  }
+}

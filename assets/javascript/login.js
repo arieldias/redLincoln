@@ -21,6 +21,12 @@ define("login", function (require) {
         actions();
   } 
 
+  callLoginSuccess = function (){
+      var html  = "<div class='login-sucess sucess'>Login realizado com sucesso</div>";
+          html  += "<div class='time'>Aguarde... </div>";
+      $(".popup-content").prepend(html);
+  }
+
   actions = function() {
     $("#submit-login").on("click", function(){
         var info = getFields( $(".form-classic input") )
@@ -31,8 +37,14 @@ define("login", function (require) {
            url: "controller/login.php",
            success: function(data){
               if ($.isArray(data)) {
-                console.log("erro")
+                
               }else{
+                window.modules.modal.clearModal();
+                callLoginSuccess();
+                setTimeout(function(){
+                  window.modules.modal.closeModal();  
+                },3000)
+                
                 
               }
            }

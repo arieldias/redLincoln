@@ -43,16 +43,20 @@ class User extends Base {
 
   public function getMenu() {
     if( $this->checkLogin() ) {
-      echo 'here I am';
+      
       echo 
-      "<ul>
-        <li> <a href=\"javascript:void()\"/> My Meals </li>
-        <li> <a href=\"javascript:void()\"/> My Prescription </li>
-        <li> <a href=\"javascript:void()\"/> Logout </li>
+      "<ul class='main_menu'>
+        <li> <a href=''>Minhas refeições</a></li>
+        <li> <a href=''>Meus relatórios</a></li>
+        <li> <a href=''>Usuário</a></li>      
       </ul>";
     } else {
-      echo 'till you see the light';
-      // echo "<script> $('document').ready(function(){ moduleLogin.callLogin() }) </script>";
+      echo  
+      "<script> 
+        onModuleLoad(function() {
+          window.modules.modal.openModal('login', 'callLogin' );
+       });        
+      </script>";
     }
   }
 

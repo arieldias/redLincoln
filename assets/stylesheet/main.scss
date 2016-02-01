@@ -1,5 +1,11 @@
+// to work
 @import "scss/globals/variables";
 @import "scss/globals/reset";
 @import "scss/globals/mixin";
-@import "scss/globals/_form";
+@import "scss/globals/form";
+@import "scss/globals/buttons";
+@import "scss/globals/popup";
 @import "scss/base";
+
+//sections
+@import  "scss/sections/header"
