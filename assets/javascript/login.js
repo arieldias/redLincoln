@@ -73,9 +73,10 @@ define("login", function (require) {
     });
   }
 
-  getMenu = function(getMenuEntry) {
+  getMenu = function() {
     sendAjax({getMenu: "getMenu"}, function(output){
-       $(".menu .menu-space").load(output);
+       $(".menu").load(output);
+       if (!!output)
        a$.header.initMenu();
     });     
   }
@@ -103,7 +104,8 @@ define("login", function (require) {
   
   return {
     callLogin : callLogin,
-    logout : logout    
+    getMenu : getMenu,
+    logout : logout   
   } 
   
 });

@@ -59,7 +59,7 @@ class User extends Base {
   public function greeting() {
       if( $this->checkLogin() ) {
       echo 
-      "<div class='welcome'> Olá ".$_SESSION['user']['name']."! Seja bem vindo!</div>";   
+      "<div class='welcome ar-flex-item-1'></div>";   
     } else {
       echo  
       "<script> 
@@ -75,7 +75,9 @@ class User extends Base {
     if ($query) {
       foreach ($query as $idSearch => $array ){
         $usr_id = $array['_user_level_id'];
-      }
+      } 
+    } else {
+      return false;
     }
 
     switch ($usr_id) {

@@ -1,18 +1,23 @@
 define("header", function (require) {
   initMenu = function(){
-    console.log("initMenu")
-  	closeOpenMenu();
+  	closeOpenMenu();    
   } 
 
   closeOpenMenu = function() {
     $(".arrow-down").on("click", function(){
-      $(".menu").animate({
-        height: "0px"
-      }, 500 );
+      console.log('teste')
+    });
+  }
+
+  checkLoadedMenu = function(){
+    onModuleLoad(function() {
+      a$.login.getMenu();   
+    });    
   }
 
   return {
-    initMenu : initMenu
+    initMenu : initMenu,
+    checkLoadedMenu : checkLoadedMenu()
   } 
 });
  

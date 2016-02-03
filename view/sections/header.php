@@ -10,18 +10,18 @@
   <meta charset="utf-8"/>
   </head>
   <body>
-    <header>
-      <div class="first-row">
-        <a class="logo" href="<?php echo ROOTURL?>" > <img src="<?php echo IMGURL?>icon.png"/></a>
+    <header class='ar-flex'>
+      
+        <a class="logo ar-flex-item-1" href="<?php echo ROOTURL?>" > <img src="<?php echo IMGURL?>icon.png"/></a>
         <?php 
           $user = new User();
           $user -> greeting();
         ?>
-      </div>     
-      <div class="menu open">
-        <div class='menu-space'></div>
-        <div class="arrow-down"></div>
-      </div>
+        
+        <div class="menu ar-flex-item-6 ar-flex">
+          
+        </div>
+      
     </header>
 
 
