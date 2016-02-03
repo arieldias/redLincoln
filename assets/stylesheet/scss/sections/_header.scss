@@ -1,26 +1,88 @@
 header {
-  background: $blueSky;
-  border-bottom: 3px solid $grey;
+  .first-row {
+    background: $blueSky;
+    border-bottom: 3px solid $grey2;
 
-  > a, > ul {
-    display: inline-block;
-  }
+    > a, > ul {
+      display: inline-block;
+    }
 
-  > a {
-    width: 45%;
-    padding-right: 3%;
-  }
-
-  > ul {
-    width: 50%;
-    text-align: right;
-    li {
-      display:  inline-block;
-      padding: $spacing;
-      border-left: 1px solid #055b83;
-      a {
-        color: $blueAlmostWhite;
+    > a {
+      width: 15%;
+      padding-right: 3%;
+      margin: 10px;
+      img {
+        width: 100%;
       }
+    }  
+  }
+  .menu {
+    background: $grey2;
+    border: 3px solid $grey2;
+    width: 100%;
+    position: relative;
+    background: -moz-linear-gradient(top, rgba(230,230,230,1) 0%, rgba(215,220,215,0.6) 49%, rgba(200,210,220,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(230,230,230,1) 0%,rgba(215,220,215,0.6) 49%,rgba(200,210,220,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(230,230,230,1) 0%,rgba(215,220,215,0.6) 49%,rgba(200,210,220,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6e6e6', endColorstr='#c8d2c8',GradientType=0 ); /* IE */
+    .menu-space {
+      height: 100%;
+      overflow: hidden;
+    }
+    .arrow-down {
+      position: absolute;
+      width: 50px;
+      height: 30px;
+      background: $grey2;
+      left: 50%;
+      margin-left: -25px;
+      border-bottom-left-radius: 5px;
+      top: 100%;
+      border-bottom-right-radius: 5px;
+      &:after {
+        content: "";
+        width: 14px;
+        height: 14px;
+        border: 1px solid;
+        transform: rotate(225deg);
+        margin-left: -8px;
+        position: absolute;
+        left: 50%;
+        border-top: none;
+        border-left: none;
+        border-color: #FFF;
+        top: 50%;
+        margin-top: -5px;
+        border-width: 3px;
+      }
+    }
+    ul.category {
+      > li {
+        display: inline-block;
+        padding: 10px;
+        vertical-align: top;
+       > a {
+          font-size: 20px;
+        }
+      }
+    }
+
+    ul.subcategory {
+      margin-top: 10px;
+      li {
+        a {
+
+        }
+      }
+    }
+  }
+
+  .menu:not(.open) {
+    height: 0px;
+    padding: 0px;
+    .arrow-down:after {
+      transform: rotate(45deg);
+      margin-top: -12px
     }
   }
 }

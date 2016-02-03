@@ -1,6 +1,3 @@
-<?php
-
-?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,12 +11,17 @@
   </head>
   <body>
     <header>
-      <a class="logo" href="<?php echo ROOTURL?>" > Nutrition Record </a>
-      <?php 
-        $user = new User();
-        $user -> getMenu();
-        // $user->logout();
-      ?>     
+      <div class="first-row">
+        <a class="logo" href="<?php echo ROOTURL?>" > <img src="<?php echo IMGURL?>icon.png"/></a>
+        <?php 
+          $user = new User();
+          $user -> greeting();
+        ?>
+      </div>     
+      <div class="menu open">
+        <div class='menu-space'></div>
+        <div class="arrow-down"></div>
+      </div>
     </header>
 
 

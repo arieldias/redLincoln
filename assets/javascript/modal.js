@@ -13,10 +13,21 @@ define("modal", function (require) {
   	$(".dialog-popup").fadeOut();
   }
 
+  loading = function(){
+    var html  =  "<div class='cssload-wrap'>";
+        html  +=    "<div class='cssload-loading'></div>";
+        html  +=    "<div class='cssload-loading cssload-v2'></div>";
+        html  +=    "<div class='cssload-loading cssload-v3'></div";
+        html  +=  "</div>";
+
+        $(".popup-content").append(html);
+  } 
+
   return {
     openModal : openModal,
     clearModal: clearModal,
-    closeModal : closeModal
+    closeModal : closeModal,
+    loading : loading
   } 
 });
  

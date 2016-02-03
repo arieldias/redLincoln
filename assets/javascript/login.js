@@ -23,9 +23,15 @@ define("login", function (require) {
   } 
 
   callLoginSuccess = function (){
-      var html  = "<div class='login-sucess sucess'>Login realizado com sucesso</div>";
-          html  += "<div class='time'>Aguarde... </div>";
-      $(".popup-content").prepend(html);
+    var html  = "<div class='login-sucess sucess' style='display:block; width:100%'> Login realizado com sucesso </div>";
+        html  += "<div class='time'>Aguarde... </div>";
+
+    $(".popup-content").prepend(html);
+    a$.modal.loading()
+    setTimeout(function(){
+      getMenu();
+      a$.modal.closeModal();
+    },3000)      
   }
 
   actions = function() {
@@ -37,6 +43,7 @@ define("login", function (require) {
            data: info,
            url: "controller/login.php",
            success: function(data){
+            
               if ($.isArray(data)) {
                 $(".errors").html("");
                 $(data).each(function(i,m){
@@ -44,14 +51,8 @@ define("login", function (require) {
                 })
 
               } else {
-                window.modules.modal.clearModal();
-                callLoginSuccess();
-                setTimeout(function(){
-                  window.modules.modal.closeModal();  
-                  window.location.reload()
-                },3000)
-                
-                
+                a$.modal.clearModal();
+                callLoginSuccess();                
               }
            }
         });       
@@ -72,6 +73,25 @@ define("login", function (require) {
     });
   }
 
+  getMenu = function(getMenuEntry) {
+    sendAjax({getMenu: "getMenu"}, function(output){
+       $(".menu .menu-space").load(output);
+       a$.header.initMenu();
+    });     
+  }
+
+
+  sendAjax = function( inputData, handleCallBack) {
+    $.ajax({
+       type: "POST",
+       data: inputData,
+       url: "controller/login.php",
+       success: function(data){
+          handleCallBack(data);
+       }
+    });
+  }
+
   getFields = function(from){
     var array = {};
     $(from ).each(function( index, element ) {
@@ -80,9 +100,7 @@ define("login", function (require) {
 
     return array;
   }
-
-
-
+  
   return {
     callLogin : callLogin,
     logout : logout    
