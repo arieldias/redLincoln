@@ -1,9 +1,16 @@
 .container {
 	width: 80%;
 	max-width: 1000px;
-	margin: 20px auto;
+	margin: $spacing*2 auto;
 	display: block;
 	background: #FFF;
-	border-radius: 10px;
+	border-radius: $spacing;
 	min-height: 350px;
+	padding: $spacing;
+
+	&[pg='loading'] {
+		* {
+			display: none;
+		}
+	}
 }

@@ -103,7 +103,6 @@ class User extends Base {
 
   public function getPerfil() {
     $query = $this->query("user.*, userLevel.name as level", "as user INNER JOIN _user_level as userLevel ON user._user_level_id=userLevel.id WHERE user.id = '".$_SESSION['user']['id']."'");  
-    return($query);
     if (!$query) {
       $this->error("The user doesn't exist");
     } else {

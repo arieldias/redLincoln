@@ -1,6 +1,5 @@
 .form-classic {
 	.row {
-		display: block;
 		padding-bottom: 10px;
 		margin-bottom: 10px;
 		border-bottom: 1px dashed #E5E5E5;
@@ -8,6 +7,20 @@
 	      border-bottom: none;
 		  margin-bottom: 0px;
 		  padding-bottom: 0px;
+		}
+
+		&:not(.ar-flex) {
+			display: block;
+		}
+
+		&.ar-flex {
+			.ar-flex-item-1, .ar-flex-item-2, .ar-flex-item-3, .ar-flex-item-4, .ar-flex-item-5, .ar-flex-item-6, {
+				margin-right: 10px;
+
+				&:last-child {
+					margin-right: none;
+				}
+			}
 		}
 	}
 	label {

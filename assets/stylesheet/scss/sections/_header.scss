@@ -6,6 +6,7 @@ header {
  
   > a {
     padding: 10px 15px 10px 10px;
+    max-width: 75px;
     img {
       width: 100%;
     }
@@ -39,6 +40,7 @@ header {
     ul.subcategory {
       display: none;
       margin-top: 10px;
+      overflow: hidden;
       
       li {
         position: relative;
@@ -57,8 +59,12 @@ header {
       background: -webkit-linear-gradient(top, rgba(243,243,243,0) 0%,rgba(240,240,240,1) 21%,rgba(229,229,229,1) 100%); /* Chrome10-25,Safari5.1-6 */
       background: linear-gradient(to bottom, rgba(243,243,243,0) 0%,rgba(240,240,240,1) 21%,rgba(229,229,229,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00f3f3f3', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
-      border-right-radius: $spacing/2;
-      border-left-radius: $spacing/2;
+      -webkit-border-bottom-right-radius: $spacing/2;
+      -webkit-border-bottom-left-radius: $spacing/2;
+      -moz-border-radius-bottomright: $spacing/2;
+      -moz-border-radius-bottomleft: $spacing/2;
+      border-bottom-right-radius: $spacing/2;
+      border-bottom-left-radius: $spacing/2;
       > li {
         border-bottom: 1px solid $greyGradientTo;
         &:last-child {
