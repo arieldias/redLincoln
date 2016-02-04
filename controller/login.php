@@ -18,5 +18,11 @@ include "../conf/topo_basic.php";
   if (isset($_POST['getMenu']) ) {
     echo json_encode( $usr -> getMenu() );         
   }
+
+
+  // Get perfil
+  if (isset($_POST['getPerfil']) ) {
+    echo json_encode( $usr -> getPerfil() );         
+  }
 ?>
 

@@ -81,7 +81,7 @@ class User extends Base {
     }
 
     switch ($usr_id) {
-      case '1':
+      case '3':
         $html = "view/pages/menu_admin.html";
         break;
 
@@ -89,7 +89,7 @@ class User extends Base {
         $html = "view/pages/menu_nutri.html";
         break;
       
-      case '3':
+      case '1':
         $html = "view/pages/menu_user.html";
         break;      
 
@@ -99,6 +99,18 @@ class User extends Base {
     }
 
     return $html;
+  }
+
+  public function getPerfil() {
+    $query = $this->query("user.*, userLevel.name as level", "as user INNER JOIN _user_level as userLevel ON user._user_level_id=userLevel.id WHERE user.id = '".$_SESSION['user']['id']."'");  
+    return($query);
+    if (!$query) {
+      $this->error("The user doesn't exist");
+    } else {
+      foreach ($query as $idSearch => $array ){
+        return $array;
+      }      
+    }
   }
 
   public function checkLogin(){

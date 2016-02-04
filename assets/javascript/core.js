@@ -1,9 +1,12 @@
 var a$ = window.modules = {};
  var loadCallbacks = [];
  var myPaths = {
+     functions : 'functions',
      login: 'login',
-      modal : 'modal',
-      header : 'header'
+     modal : 'modal',
+     header : 'header',
+     perfil : 'perfil'
+
  }
  function onModuleLoad(callback) {
    loadCallbacks.push(callback);
@@ -15,10 +18,12 @@ var a$ = window.modules = {};
 });
 
 
-require(['login', 'modal', 'header'], function(login, modal, header) {
+require(['functions','login', 'modal', 'header', 'perfil'], function(functions, login, modal, header, perfil) {
+   window.modules.functions = functions;
    window.modules.login = login;
    window.modules.modal = modal; 
    window.modules.header = header; 
+   window.modules.perfil = perfil; 
    for(var i = 0; i < loadCallbacks.length; i++) {
     loadCallbacks[i]();
    }   

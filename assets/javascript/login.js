@@ -66,6 +66,7 @@ define("login", function (require) {
          logout:"logout"
        },
        url: "controller/login.php",
+            
        success: function(data){
           if(data);
           window.location.reload()
