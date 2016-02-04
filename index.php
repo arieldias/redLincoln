@@ -2,10 +2,12 @@
 include "conf/topo_basic.php";
 include "view/sections/header.php";
 
-  	// $usr = new User();
-  	// $usr -> logout();
-  	// exit;
+?>  
+<div class="container" pg="index">
+	
+</div>
 
+<?php
 include "view/sections/footer.php";
 ?>
 

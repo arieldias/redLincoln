@@ -4,12 +4,14 @@
   src: url("fonts/quartzo__personal_use_only-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/quartzo__personal_use_only-webfont.woff2") format("woff2"), url("fonts/quartzo__personal_use_only-webfont.woff") format("woff"), url("fonts/quartzo__personal_use_only-webfont.ttf") format("truetype"), url("fonts/quartzo__personal_use_only-webfont.svg#quartzo_demobold") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 @font-face {
   font-family: 'nonchalance';
   src: url("fonts/nonchalance_regular-webfont.eot");
   src: url("fonts/nonchalance_regular-webfont.eot?#iefix") format("embedded-opentype"), url("fonts/nonchalance_regular-webfont.woff2") format("woff2"), url("fonts/nonchalance_regular-webfont.woff") format("woff"), url("fonts/nonchalance_regular-webfont.ttf") format("truetype"), url("fonts/nonchalance_regular-webfont.svg#nonchalanceregular") format("svg");
   font-weight: normal;
   font-style: normal; }
+
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -170,11 +172,11 @@ i {
   width: calc(100% - 10px); }
 
 .bt-white-blue {
-  color: #25B7D3;
+  color: #25b7d3;
   padding: 10px 20px;
   font-size: 14px;
   background: #FFF;
-  border: 1px solid #25B7D3;
+  border: 1px solid #25b7d3;
   border-right: 0px;
   border-left: 0px;
   border-radius: 5px;
@@ -211,16 +213,16 @@ i {
     margin-top: -18%;
     margin-left: -25%;
     border-top-width: 3px;
-    border-top-color: #25B7D3;
+    border-top-color: #25b7d3;
     border-bottom-width: 5px;
-    border-bottom-color: #25B681; }
+    border-bottom-color: #25b681; }
     .dialog-popup .popup-content .errors {
-      color: #A20000; }
+      color: #a20000; }
       .dialog-popup .popup-content .errors .error {
         display: block;
         padding: 10px;
         margin: 10px 0px;
-        border: 1px solid #A20000; }
+        border: 1px solid #a20000; }
 
 .cssload-loading {
   background-color: transparent;
@@ -249,130 +251,196 @@ i {
   0% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     transform: scale(1); }
+
   25% {
     box-shadow: 15px 15px lightblue, -15px -15px lightgreen;
     transform: scale(0.5); }
+
   50% {
     box-shadow: -15px 15px lightblue, 15px -15px lightgreen;
     transform: scale(0.5); }
+
   75% {
     box-shadow: -15px -15px lightblue, 15px 15px lightgreen;
     transform: scale(0.5); }
+
   100% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     transform: scale(1); } }
+
 @-o-keyframes cssload-Spinner {
   0% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     -o-transform: scale(1); }
+
   25% {
     box-shadow: 15px 15px lightblue, -15px -15px lightgreen;
     -o-transform: scale(0.5); }
+
   50% {
     box-shadow: -15px 15px lightblue, 15px -15px lightgreen;
     -o-transform: scale(0.5); }
+
   75% {
     box-shadow: -15px -15px lightblue, 15px 15px lightgreen;
     -o-transform: scale(0.5); }
+
   100% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     -o-transform: scale(1); } }
+
 @-ms-keyframes cssload-Spinner {
   0% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     -ms-transform: scale(1); }
+
   25% {
     box-shadow: 15px 15px lightblue, -15px -15px lightgreen;
     -ms-transform: scale(0.5); }
+
   50% {
     box-shadow: -15px 15px lightblue, 15px -15px lightgreen;
     -ms-transform: scale(0.5); }
+
   75% {
     box-shadow: -15px -15px lightblue, 15px 15px lightgreen;
     -ms-transform: scale(0.5); }
+
   100% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     -ms-transform: scale(1); } }
+
 @-webkit-keyframes cssload-Spinner {
   0% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     -webkit-transform: scale(1); }
+
   25% {
     box-shadow: 15px 15px lightblue, -15px -15px lightgreen;
     -webkit-transform: scale(0.5); }
+
   50% {
     box-shadow: -15px 15px lightblue, 15px -15px lightgreen;
     -webkit-transform: scale(0.5); }
+
   75% {
     box-shadow: -15px -15px lightblue, 15px 15px lightgreen;
     -webkit-transform: scale(0.5); }
+
   100% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     -webkit-transform: scale(1); } }
+
 @-moz-keyframes cssload-Spinner {
   0% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     -moz-transform: scale(1); }
+
   25% {
     box-shadow: 15px 15px lightblue, -15px -15px lightgreen;
     -moz-transform: scale(0.5); }
+
   50% {
     box-shadow: -15px 15px lightblue, 15px -15px lightgreen;
     -moz-transform: scale(0.5); }
+
   75% {
     box-shadow: -15px -15px lightblue, 15px 15px lightgreen;
     -moz-transform: scale(0.5); }
+
   100% {
     box-shadow: 15px -15px lightblue, -15px 15px lightgreen;
     -moz-transform: scale(1); } }
+
 * {
   font-family: verdana, arial, helvetica, sans-serif; }
 
 html {
-  background: #F0F5F5;
+  background: #f0f5f5;
   height: 100%; }
 
 body {
   position: relative;
   height: 100%; }
 
+.container {
+  width: 80%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: block;
+  background: #FFF;
+  border-radius: 10px;
+  min-height: 350px; }
+
 header {
   width: 100%;
-  background: #f5f5f5;
-  background: -moz-linear-gradient(top, #fff 0, #f3f3f3 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fff), color-stop(100%, #f3f3f3));
-  background: -webkit-linear-gradient(top, #fff 0, #f3f3f3 100%);
-  background: -o-linear-gradient(top, #fff 0, #f3f3f3 100%);
-  background: -ms-linear-gradient(top, #fff 0, #f3f3f3 100%);
-  background: linear-gradient(to bottom, #fff 0, #f3f3f3 100%);
-  border-bottom: 1px solid #555; }
+  background: whitesmoke;
+  background: -moz-linear-gradient(top, white 0, #f3f3f3 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f3f3f3));
+  background: -webkit-linear-gradient(top, white 0, #f3f3f3 100%);
+  background: -o-linear-gradient(top, white 0, #f3f3f3 100%);
+  background: -ms-linear-gradient(top, white 0, #f3f3f3 100%);
+  background: linear-gradient(to bottom, white 0, #f3f3f3 100%);
+  border-bottom: 1px solid #555555; }
   header > a {
     padding: 10px 15px 10px 10px; }
     header > a img {
       width: 100%; }
   header .menu ul.category > li {
     padding: 10px;
-    margin: 0px 20px; }
+    margin: 0px 20px;
+    position: relative; }
     header .menu ul.category > li > a {
       font-size: 15px;
-      color: #555;
+      color: #555555;
       text-transform: uppercase;
       text-align: center;
       display: block; }
-    header .menu ul.category > li.selected {
-      border-bottom: 1px solid #25B7D3; }
+    header .menu ul.category > li.selected > a {
+      border-bottom: 1px solid #25b7d3;
+      font-weight: bold;
+      color: #25b7d3;
+      padding: 10px 0px;
+      margin-bottom: 10px; }
   header .menu ul.subcategory {
     display: none;
     margin-top: 10px; }
+    header .menu ul.subcategory li {
+      position: relative; }
+  header .menu .selected ul {
+    display: block;
+    position: absolute;
+    width: 100%;
+    border: 1px solid #C6C6C6;
+    border-top: none;
+    background: -moz-linear-gradient(top, rgba(243, 243, 243, 0) 0%, #f0f0f0 21%, #e5e5e5 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(243, 243, 243, 0) 0%, #f0f0f0 21%, #e5e5e5 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(243, 243, 243, 0) 0%, #f0f0f0 21%, #e5e5e5 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00f3f3f3', endColorstr='#e5e5e5',GradientType=0 );
+    /* IE6-9 */
+    border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px; }
+    header .menu .selected ul > li {
+      border-bottom: 1px solid #f3f3f3; }
+      header .menu .selected ul > li:last-child {
+        border-bottom: none; }
+      header .menu .selected ul > li > a {
+        display: block;
+        padding: 7px 4px;
+        font-size: 12px;
+        cursor: pointer;
+        color: #555555; }
 
 footer {
   display: block;
   z-index: 1;
   padding: 10px;
-  background: #25B681;
-  border-top: 2px solid #E2E4E5;
+  background: #25b681;
+  border-top: 2px solid #e2e4e5;
   position: absolute;
   bottom: 0px;
   width: calc(100% - 20px); }
-
-/*# sourceMappingURL=main.css.map */

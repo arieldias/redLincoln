@@ -75,9 +75,12 @@ define("login", function (require) {
 
   getMenu = function() {
     sendAjax({getMenu: "getMenu"}, function(output){
-       $(".menu").load(output);
-       if (!!output)
-       a$.header.initMenu();
+       
+      if (!!output) {
+        $(".menu").load(output,function(){
+          a$.header.initMenu();  
+        });           
+      }       
     });     
   }
 
