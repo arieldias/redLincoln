@@ -6,4 +6,12 @@ h1 {
   margin-bottom: $spacing*1.5;
   padding-bottom: $spacing*1.5;
   border-bottom: 1px solid $blueSky;
+
+  .subh1 {
+  	color: $greenSoft;
+  	font-size: 15px;
+  	text-transform: capitalize;
+    font-family: inherit;
+  }
 }
+

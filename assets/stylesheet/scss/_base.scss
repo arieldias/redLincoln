@@ -13,3 +13,55 @@ body {
   height: 100%;
 }
 
+a {
+	cursor: pointer;
+}
+
+.margin {
+	margin: $spacing;
+	&.margin-double {
+		margin: $spacing*2;
+	}
+
+	&.margin-quad {
+		margin: $spacing*4;
+	}
+
+	&.margin-half {
+		margin: $spacing/2;
+	}
+
+	&.margin-vertical {
+		margin-left: 0px;
+		margin-right: 0px;
+	}
+
+	&.margin-sides {		
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	&.margin-right {
+		margin-left: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	&.margin-left {
+		margin-right: 0px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	&.margin-top {
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-bottom: 0px;
+	}
+
+	&.margin-bottom {
+		margin-left: 0px;
+		margin-right: 0px;
+		margin-top: 0px;
+	}
+}

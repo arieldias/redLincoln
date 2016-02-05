@@ -1,7 +1,6 @@
 define("header", function (require) {
   initMenu = function(){
   	$(".menu-header").on("click", function(){
-      console.log("header trigger")
       var p = $(this).parent();
       var isThisSelected = p.hasClass("selected") ? true : false;
       var selected = $(".category .selected")
@@ -35,7 +34,6 @@ define("header", function (require) {
 
   checkLoadedMenu = function(){
     onModuleLoad(function() {
-      console.log("teste")
       a$.login.getMenu();   
     });    
   }
@@ -49,12 +47,25 @@ define("header", function (require) {
     $(".link-perfil").on("click", function(){
       callPerfil();
     });
+
+    $(".category .subcategory a").on('click', function(){
+      $(".category .selected > a").click();      
+    });
+
+    $(".link-admin-pessoas").on("click",function(){
+      callAdmin();
+    })
   }
 
   // EACH INDIVIDUAL FUNCTION
   callPerfil = function(){
     a$.modal.openModal("modal", "loading");
     a$.perfil.callPerfil();
+  }
+
+  callAdmin = function(){
+    a$.modal.openModal("modal", "loading");      
+    a$.admin.callAdminUser() 
   }
 
   return {

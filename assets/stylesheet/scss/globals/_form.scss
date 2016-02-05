@@ -30,9 +30,11 @@
 		font-size: 14px;
 	}
 
-	input[type='text'], input[type='password'], input[type='tel'] {
+	input[type='text'], input[type='password'], input[type='tel'], select {
 		padding: 3px;
 		width: calc(100% - 10px);
+		background: #FFF;
+		border: 1px solid $grey;
 	}
 
 }

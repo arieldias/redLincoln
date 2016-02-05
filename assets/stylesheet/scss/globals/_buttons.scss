@@ -11,3 +11,17 @@
   cursor: pointer;
   display: inline-block;
 }
+
+.bt-white-green {
+  color: $greenSoft;
+  padding: 10px 20px;
+  font-size: 14px;
+  background: #FFF;
+  border: 1px solid $greenSoft;
+  border-right: 0px;
+  border-left: 0px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  display: inline-block;
+}

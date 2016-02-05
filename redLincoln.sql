@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 22, 2016 at 09:02 
+-- Generation Time: Feb 05, 2016 at 08:41 
 -- Server version: 10.1.9-MariaDB
 -- PHP Version: 5.5.30
 
@@ -167,6 +167,51 @@ INSERT INTO `_need_type` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `_state`
+--
+
+CREATE TABLE `_state` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `abb` varchar(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `_state`
+--
+
+INSERT INTO `_state` (`id`, `name`, `abb`) VALUES
+(1, 'Acre', 'AC'),
+(2, 'Alagoas', 'AL'),
+(3, 'Amapa', 'AP'),
+(4, 'Amazonas', 'AM'),
+(5, 'Bahia', 'BA'),
+(6, 'Ceara', 'CE'),
+(7, 'Distrito Federal', 'DF'),
+(8, 'Espirito Santo', 'ES'),
+(9, 'Goias', 'GO'),
+(10, 'Maranhao', 'MA'),
+(11, 'Mato Grosso', 'MT'),
+(12, 'Mato Grosso do Sul', 'MS'),
+(13, 'Minas Gerais', 'MG'),
+(14, 'Para', 'PA'),
+(15, 'Paraiba', 'PB'),
+(16, 'Parana', 'PR'),
+(17, 'Pernambuco', 'PE'),
+(18, 'Piaui', 'PI'),
+(19, 'Rio de Janeiro', 'RJ'),
+(20, 'Rio Grande do Norte', 'RN'),
+(21, 'Rio grande do Sul', 'RS'),
+(22, 'Rondonia', 'RO'),
+(23, 'Roraima', 'RR'),
+(24, 'Santa Catarina', 'SC'),
+(25, 'Sao Paulo', 'SP'),
+(26, 'Sergipe', 'SE'),
+(27, 'Tocantins', 'TO');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `_user`
 --
 
@@ -176,10 +221,19 @@ CREATE TABLE `_user` (
   `email` varchar(120) DEFAULT NULL,
   `birth` date DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
+  `city` int(11) NOT NULL,
+  `state` int(11) NOT NULL,
   `dr_id` int(11) DEFAULT NULL,
   `_user_level_id` int(10) UNSIGNED NOT NULL,
   `picture` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `_user`
+--
+
+INSERT INTO `_user` (`id`, `name`, `email`, `birth`, `password`, `city`, `state`, `dr_id`, `_user_level_id`, `picture`) VALUES
+(1, 'Ariel Dias', 'arieldias@gmail.com', '1988-04-14', '0360fe69153cd7140f49f471fd1160df', 23, 21, NULL, 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -283,6 +337,12 @@ ALTER TABLE `_need_type`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `_state`
+--
+ALTER TABLE `_state`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `_user`
 --
 ALTER TABLE `_user`
@@ -351,10 +411,15 @@ ALTER TABLE `_measurement`
 ALTER TABLE `_need_type`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `_state`
+--
+ALTER TABLE `_state`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+--
 -- AUTO_INCREMENT for table `_user`
 --
 ALTER TABLE `_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `_user_level`
 --

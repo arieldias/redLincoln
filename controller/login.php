@@ -24,5 +24,12 @@ include "../conf/topo_basic.php";
   if (isset($_POST['getPerfil']) ) {
     echo json_encode( $usr -> getPerfil() );         
   }
+
+  if (isset($_POST['updateUser']) ) {
+    echo json_encode( $usr -> updateUser($_POST) );         
+  } 
+  // else {
+  //   echo json_encode("wwwwwww");
+  // }
 ?>
 

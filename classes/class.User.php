@@ -56,6 +56,24 @@ class User extends Base {
     }
   }
 
+  public function updateUser($array) {
+    $sql = "UPDATE _user SET 
+    name ='".$array['name']."', 
+    email='".$array['email']."',
+    birth='".data2MysQL($array['birth'])."', 
+    city= ".$array['city'].",
+    state= ".$array['state'].
+
+    " WHERE id=".$_SESSION['user']['id'];
+
+    global $db;
+    if ($db->query($sql)) {
+      return true;
+    }else {
+      return false;
+    }
+  }
+
   public function greeting() {
       if( $this->checkLogin() ) {
       echo 
