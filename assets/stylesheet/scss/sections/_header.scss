@@ -41,6 +41,7 @@ header {
       display: none;
       margin-top: 10px;
       overflow: hidden;
+      margin-left: $spacing * -1;
       
       li {
         position: relative;
