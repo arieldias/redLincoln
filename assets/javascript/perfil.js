@@ -5,7 +5,7 @@ define("perfil", function (require) {
       a$.state.callSelectState("#state");
       setTimeout(function(){
         fillCurrentPerfil();
-      },200)      
+      },500)      
     })
   }
 

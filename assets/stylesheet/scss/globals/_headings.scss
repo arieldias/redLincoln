@@ -12,6 +12,13 @@ h1 {
   	font-size: 15px;
   	text-transform: capitalize;
     font-family: inherit;
+
+    .subsubh1 {
+      color: $grey2;
+      font-size: 12px;
+      text-transform: capitalize;
+      font-family: inherit;
+    }
   }
 }
 

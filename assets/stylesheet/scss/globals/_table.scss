@@ -1,0 +1,23 @@
+.table-classic {
+	width: 100%;
+	tr {
+		&:nth-child(odd) {
+		    background: $blueAlmostWhite;
+		}
+
+		&:first-child {
+			background:  $grey2;
+		}		
+	}
+
+	th {
+		font-size: 14px;
+    	padding: $spacing $spacing/2;
+    	color: $blueAlmostWhite;
+    	text-align: left;
+	}
+
+	td {
+		padding: $spacing/2;
+	}
+}

@@ -65,3 +65,32 @@ a {
 		margin-top: 0px;
 	}
 }
+
+
+.checkbox-label {
+	display: none;
+	& + label {
+		position:relative;
+		margin-right: $spacing;
+		&:before {
+			@include prefixer("border-radius", 2px);
+			position: absolute;
+			content: "";
+			width:  15px;
+			height: 15px;
+			border: 1px solid $grey2;
+			text-align: center;
+	    }
+	}
+	&:checked + label:before {
+		// content: "\039e";
+		content: "\0398";
+		color: $blueSky;
+		font-size: 17px;
+    	border-color: #25b7d3;
+
+	}
+
+	
+	
+}

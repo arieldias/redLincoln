@@ -1,7 +1,7 @@
 define("functions", function (require) {
 
   sendAjax = function( url, inputData, handleCallBack) {
-  	$.ajax({
+    $.ajax({
        type: "POST",
        data: inputData,
        url: "controller/" + url + ".php",
