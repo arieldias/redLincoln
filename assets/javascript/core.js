@@ -2,12 +2,13 @@ var a$ = window.modules = {};
 var loadCallbacks = [];
 var myPaths = {
   functions : 'functions',
-  login: 'login',
+  login : 'login',
   modal : 'modal',
   header : 'header',
   perfil : 'perfil',
   state : 'state',
-  admin : 'admin'
+  admin : 'admin',
+  user: 'user'
 }
 
 var myPathsKeys = Object.keys(myPaths)

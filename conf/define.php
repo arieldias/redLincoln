@@ -11,4 +11,9 @@
 	define("VIEWPATH", ROOTPATH."view/");
 	define("IMGURL", ROOTURL."assets/images/");
 	define("IMGPATH", ROOTPATH."assets/images/");
+
+	/// LEVELS
+	define ("LEVELADMIN", 3);
+	define ("LEVELDR", 2);
+	define ("LEVELUSER", 1);
 ?>

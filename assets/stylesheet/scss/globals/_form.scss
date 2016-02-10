@@ -5,8 +5,11 @@
 		border-bottom: 1px dashed #E5E5E5;
 		&:last-child {
 	      border-bottom: none;
-		  margin-bottom: 0px;
-		  padding-bottom: 0px;
+	      &:not(.margin){
+	        margin-bottom: 0px;
+		    padding-bottom: 0px;	
+	      }
+		  
 		}
 
 		&:not(.ar-flex) {
@@ -37,4 +40,43 @@
 		border: 1px solid $grey;
 	}
 
+	.form-error {
+		border: 1px solid $redError!important;
+		background: $blueAlmostWhite!important;
+	}
+	.requirement {
+		color: $redError;
+		font-style: italic;
+	}
+	.return-msg {
+	    padding: $spacing $spacing/2;
+	    border: 1px solid;
+	    font-size: 14px;
+	    margin-bottom: $spacing;
+	    display: none;
+
+	    &.msg-success {
+	      background-color: $greenReallySoft;
+	      border-color: $greenSoft;
+	      color: $blueSky;
+	    }
+
+	    &.msg-error {
+	      background-color: $redErrorAgainstTheLight;
+	      border-color: $redError;
+	      color: $redError;
+	    }
+	}
+
+	.bad-tooltip {
+		background: rgba(244, 229, 229, 0.8);
+		padding: $spacing;
+	    border: 1px solid;
+	    font-size: 12px;
+	    position: absolute;
+	    border-radius: $spacing/2;
+	    margin-bottom: $spacing;
+	    border-color: $redError;
+	    color: $redError;
+	}
 }

@@ -56,6 +56,42 @@ class User extends Base {
     }
   }
 
+  public function listAllUsers() {
+    $query = $this->query();  
+    if (!$query) {
+      $this->error("The user doesn't exist");
+      return false;
+    } else {
+      foreach ($query as $idSearch => $array ){
+          $obj[$idSearch] = $array;
+      }
+
+    }
+
+    return $obj;
+  }
+
+  public function addUser($array) {
+    $sql = "INSERT _user (name, email, birth, city, state, dr_id, password, _user_level_id) VALUES ( '".
+      $array['name']."', '"
+      .$array['email']."', '"
+      .data2MysQL($array['birth'])."', '"
+      .$array['city']."', '"
+      .$array['state']."', '"
+      .$array['dr_id']."', "
+      ."MD5('".$array['password']."'), '"
+      .$array['level']."')";
+
+    // return $sql;
+
+    global $db;
+    if ($db->query($sql)) {
+      return true;
+    }else {
+      return false;
+    }
+  }
+
   public function updateUser($array) {
     $sql = "UPDATE _user SET 
     name ='".$array['name']."', 
@@ -130,6 +166,16 @@ class User extends Base {
     }
   }
 
+  public function emailExists($email) {
+    $query = $this->query("*", "WHERE email = '".$email."'");  
+    if (!$query) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+
   public function checkLogin(){
     return isset($_SESSION['user']) ? true : false;
        true;
@@ -138,6 +184,20 @@ class User extends Base {
   public function logout() {
     unset($_SESSION['user']);
     return true;
+  }
+
+  public function getDrList() {
+    return $query = $this->query("*", "where _user_level_id = ".LEVELDR);  
+    if (!$query) {
+      return "negative query";
+      $this->error("No user has been found");
+    } else {
+      return "positive query";
+      foreach ($query as $idSearch => $array ){
+        $arrayName[] =  $array ;
+      } 
+      return $arrayName;     
+    }
   }
 
 

@@ -11,6 +11,7 @@ define("admin", function (require) {
 
   adminActions = function() {
     newUser();
+    listAllUsers( $(".table-classic") );
   }
 
   newUser = function(){
@@ -21,22 +22,49 @@ define("admin", function (require) {
 
   callNewUser = function () {
     a$.modal.openModal("modal","loading");
-    $(".container").load("view/form/perfil_form.html", function(){
-      $('h1').html("Admin: <span class='subh1'> Usuários: <span class='subsubh1'> Novo</span></span>")
+    $(".container").load("view/form/perfil_admin_form.html", function(){
       a$.state.callSelectState("#state");
-      console.log("serio?")
-      adminVisibility();
+      a$.user.callSelectDr("#dr_id")
+      a$.functions.checkPasswords( $("#password"), $("#passwordC") );
+      a$.modal.closeModal();
+      setTimeout(function(){
+        adminVisibility();
+      },250)
+      
    
     })
   }
 
   adminVisibility = function() {
-    console.log($(".admin-visibility").length)
-    $(".admin-visibility").load("view/form/perfil_form_admin_snippet.html",function(){
-          
-        a$.modal.closeModal();
-        $(".container").attr('pg', 'admin_new_user') 
-      })
+    saveUser();
+    $(".container").attr('pg', 'admin_new_user')       
+  }
+
+  saveUser = function(){
+    $(".bt-white-blue#addNewUser").on("click", function(){
+      if ( a$.functions.validateForm( $(this).parents("form") ) ) {
+        if (a$.functions.validateFormPasswords ($("#password"), $("#passwordC") ) ) {
+          a$.user.insertIfIsNew( $("#email").val() )
+        }
+      } 
+    })
+  }
+
+  listAllUsers = function (where){
+    a$.functions.sendAjax('user', {listAll: "listAll" }, function(data){
+      console.log(data.length)
+      for (i=0; i < data.length; i++)     
+        where.append(
+          "<tr>" +
+            "<td></td>"
+            "<td>" + data[i]['name'] +"</td>"
+            "<td>" + data[i]['name'] +"</td>"
+            "<td>" + data[i]['name'] +"</td>"
+            "<td></td>"
+          + "</tr>"
+        )
+       
+    })
   }
 
  

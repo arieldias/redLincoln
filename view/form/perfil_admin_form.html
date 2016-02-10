@@ -1,0 +1,78 @@
+<form class="form-classic">
+  <h1> Perfil <span class='subh1'> Usuários: <span class='subsubh1'> Novo</span></span> </h1>
+  <div class='msg-success return-msg'></div>
+  
+  <div class='msg-error return-msg'> </div>
+
+  <div class="row ar-flex">
+    <div class="ar-flex-item-1">
+      <label for='name'> Nome: <span class='requirement'>*</span></label>
+      <input type='text' id='name' name='name' class='req'/>
+    </div>
+
+    <div class="ar-flex-item-1">
+      <label for='email'> Email: <span class='requirement'>*</span></label>
+      <input type='text' id='email' name='email' class='req'/>
+    </div>
+
+ 
+  </div>
+
+  <div class="row ar-flex">
+   <div class="ar-flex-item-1">
+      <label for='password'> Senha: <span class='requirement'>*</span></label>
+      <input type='password' id='password' name='password' class='req'/>
+    </div>
+
+    <div class="ar-flex-item-1">
+      <label for='passwordC'> Repita Senha: <span class='requirement'>*</span></label>
+      <input type='password' id='passwordC' name='passwordC' class='req'/>
+    </div>
+  </div>
+
+  <div class='row ar-flex'>
+    <div class="ar-flex-item-1">
+      <label for='city'> Cidade: <span class='requirement'>*</span></label>
+      <input type='text' id='city' name='city' class='req'/>
+    </div>    
+
+    <div class="ar-flex-item-1">
+      <label for='state'> Estado:<span class='requirement'>*</span> </label>
+      <!-- <input type='text' id='state' name='state' /> -->
+      <select name='state' id='state' class='req'>
+       <option value=""> Escolha o estado </option>
+      </select>
+    </div>    
+
+    <div class="ar-flex-item-1">
+      <label for='birth'> Nascimento: </label>
+      <input type='text' id='birth' name='birth' />
+    </div>    
+
+
+  </div>
+  <div class='admin-visibility'>
+    <div class="row ar-flex margin margin-bottom">
+      <div class="ar-flex-item-1">
+        <label for='level'> Nível: <span class='requirement'>*</span></label>
+        <select id='level' class="req" name='level'>
+            <option value="">Selecione</option>
+            <option value='3'>Admin</option>
+            <option value='2'>Nutricionista</option>
+            <option value='1'>Usuário</option>
+        </select>
+      </div>
+
+      <div class="ar-flex-item-1">
+        <label for='dr_id'> Nutricionista: </label>
+        <select id='dr_id' name='dr_id'>
+          <option value="">Selecione ou deixe em Branco</option>
+        </select>
+      </div> 
+    </div>
+  </div>
+
+  <div class='row'>
+    <input type="button" value="Salvar"  id='addNewUser' name='saveUser' class='bt-white-blue'/>
+  </div>
+</form>

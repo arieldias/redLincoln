@@ -31,10 +31,14 @@ define("perfil", function (require) {
   }
   
   saveProfile = function(){
-    $(".bt-white-blue").on("click", function() {
+    $(".bt-white-blue#updateProfile").on("click", function() {
       var info  = a$.functions.getFields(".form-classic input, .form-classic select")
       a$.functions.sendAjax('login', info, function(data){
-        console.log(data);
+        if ( data ) {
+          a$.functions.displaySuccess("Usuário foi atualizado com sucesso")
+        } else {
+          a$.functions.displayError("Usuário foi atualizado com sucesso")
+        }
       })      
     })
     

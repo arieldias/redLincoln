@@ -17,17 +17,21 @@ class Base {
   public function query($column = "*", $refinement="") {
 
     $sql = "SELECT ". $column . " FROM " . $this->tableName." ".$refinement;
+
     global $db;
 
     $result = $db->query($sql);
     $arr = array();
 
-
-    while($obj = $result->fetch_object()){ 
-      foreach($obj as $t => $v) {
-         $arr[$obj->id][$t] = $v;
+    if($result){
+      $aux = 0;      
+      while($obj = $result->fetch_object()){ 
+        foreach($obj as $t => $v) {
+           $arr[$aux][$t] = $v;
+        }
+        $aux ++;
       }
-	  }
+    }
     
     if ($arr)
       return $arr;
